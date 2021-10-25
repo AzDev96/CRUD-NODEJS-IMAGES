@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container">
+    <h2>Kurslar</h2>
+    <div>
+        <div class="">
+            <ul class="row">
+                 <% corses.forEach(cors => {  %>     
+                     <li class="list-group-item col-md-4">
+                         <ul class="list-group" style="justify-content: space-between; list-style: none;">
+                             <li class="alert alert-success">Title: <strong><%= cors.title %></strong></li>
+                             <li class="alert alert-success">images: <strong><%= cors.images %></strong></li>
+                             <li class="alert alert-success">category_id: <strong><%= cors.category_id.name %></strong></li>
+                             <li class="alert alert-success">year: <strong><%= cors.year %></strong></li>
+                         </ul>
+                     </li>
+                 <%}); %>     
+              </ul>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>
+
+

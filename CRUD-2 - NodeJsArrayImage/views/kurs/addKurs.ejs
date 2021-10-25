@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container">
+  <h2>Kurs qo'shmoq</h2>
+    <div class="col-lg-6">
+        <form  method="POST" enctype="multipart/form-data">
+            <div class="form-group mt-2">
+              <label for="title">Title</label>
+              <input name="title" type="text" class="form-control" id="title" placeholder="Title">
+            </div>
+            <div class="form-group mt-2">
+              <label for="imaga">Text</label>
+              <input name="text" type="text" class="form-control" id="imaga" placeholder="text">
+            </div>
+            <div class="form-group mt-2">
+               <label class="form-check-label" for="image">Images</label>
+              <input name="w" type="file" class="form-control" id="image" multiple>
+            </div>
+            <div class="form-group mt-2">
+                <label class="form-check-label" for="year">Year</label>
+              <input name="year" type="number" class="form-control" id="year">
+            </div>
+            <div class="form-group mt-2">
+                <label class="form-check-label" for="categ">Category</label>
+                <select class="form-select" name="category">
+                    <% categorys.forEach(category => {  %>
+                       <option value="<%= category.id %>" > <%= category.name %></option>
+                    <% }); %>
+                </select>
+            
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+          </form>
+    </div>
+</div>
+
+
+<%- include('../partials/footer.ejs') %>
+
+
