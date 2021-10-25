@@ -1,0 +1,43 @@
+<%- include('layout/header.ejs') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mt-5">
+                <h2>EDIT</h2>
+                <form action="/update/<%= user._id %>" method="post", enctype="multipart/form-data">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input value="<%= user.name %>" name="name" type="text" id="form3Example1" class="form-control" />
+                                <label class="form-label" for="form3Example1">Name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="file" name="image"  id="file" class="form-control" />
+                                <label class="form-label" for="file">Img</label>
+                                <img src="/<%= user.image %>" width="100" alt="">
+                                <input type="hidden" name="old_image" value="<%= user.image %>">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" value="<%= user.email %>" name="email" id="email" class="form-control" />
+                        <label class="form-label" for="email">Email address</label>
+                    </div>
+        
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="number" value="<%= user.phone %>"  name="phone" id="phone" class="form-control" />
+                        <label class="form-label" for="phone">Phone</label>
+                    </div>
+        
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-success btn-block mb-4">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('layout/footer.ejs') %>

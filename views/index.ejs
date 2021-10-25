@@ -1,0 +1,34 @@
+    <%- include('layout/header.ejs') %>
+    <div class="container">
+      <table class="table ">
+        <thead>
+          <tr class="alert alert-dark">
+            <th scope="col">#ID</th>
+            <th scope="col">Images</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">phone</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+            <tr>
+              <th scope="row"><%= user.id %></th>
+              <td><img src="<%= user.image %>" width="50" alt=""></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.phone %></td>
+              <td>
+                <a href="/edit/<%= user._id %>" class="btn btn-success">Edit</a>
+                <a href="/delete/<%= user._id %>" class="btn btn-danger">Delete</a>
+              </td>
+            </tr>
+         <% }); %>
+       
+        </tbody>
+      
+      </table>
+    </div>
+    <%- include('layout/footer.ejs') %>
+
